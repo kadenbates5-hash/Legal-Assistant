@@ -1,0 +1,24 @@
+{
+  "name": "legal-ai-core",
+  "version": "0.1.0",
+  "description": "Core routing, confidentiality, escalation, audit, and human-review-gate engine for the AI receptionist & paralegal system. Practice-area and firm-level layers plug in on top of this.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && npm run build:assets",
+    "build:assets": "mkdir -p dist/review-ui/public && cp -r src/review-ui/public/. dist/review-ui/public/",
+    "start:review-ui": "npm run build && node dist/review-ui/start.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.20.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "dependencies": {
+    "pg": "^8.22.0"
+  }
+}
